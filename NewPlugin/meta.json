@@ -1,0 +1,21 @@
+{
+   "licenseType" : "CC BY-SA", 
+   "creatorName" : "<CreatorName>", 
+   "packageName" : "<NewPlugin>", 
+   "standardReferenceVersionOption" : "Latest", 
+   "scriptReferenceVersionOption" : "Exact", 
+   "description" : "v<Version>. ",
+   "credits" : "", 
+   "instructions" : "", 
+   "promotionalLink" : "", 
+   "programVersion" : "1.20.77.3", 
+   "contentList" : [ 
+      "Custom/Scripts/<CreatorName>/<NewPlugin>/<NewPlugin>.cslist", 
+      "Custom/Scripts/<CreatorName>/<NewPlugin>/src"
+   ], 
+   "dependencies" : { 
+   },
+   "customOptions" : { 
+      "preloadMorphs" : "false"
+   }
+}
