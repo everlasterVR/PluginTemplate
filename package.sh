@@ -20,11 +20,13 @@ ls $plugin_name 1> /dev/null || usage
 resource_dir=publish/Custom/Scripts/$creator_name/$resource_name
 mkdir -p $resource_dir
 cp $plugin_name/*.cslist $resource_dir/
+cp $plugin_name/README.md $resource_dir/
 cp -r $plugin_name/src $resource_dir/
 
 # Update version info in meta.json
 cp $plugin_name/meta.json publish/
 sed -i "s/<Version>/$plugin_version/g" publish/meta.json
+sed -i "s/<Version>/$plugin_version/g" publish/src/Script.cs
 
 # hide .cs files (plugin is loaded with .cslist)
 for file in $(find $resource_dir -type f -name "*.cs"); do
@@ -36,7 +38,8 @@ cd publish
 package="$creator_name.$plugin_name.$package_version.var"
 zip -r $package *
 cd ..
-mv publish/$package .
+mkdir -p ../../../AddonPackages/Self
+mv publish/$package ../../../AddonPackages/Self
 rm -rf publish
 
-echo "Package $package created with version $plugin_version."
+echo "Package $package created with version $plugin_version and moved to AddonPackages\Self."

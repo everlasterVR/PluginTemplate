@@ -8,8 +8,9 @@ The template consist of:
 - a .cslist file (which is used to load the plugin in VaM)
 - an src/ dir and template .cs files for the plugin code
 - a template meta.json file
+- template LICENSE and README.md files to accompany the plugin source
 
-It is accompanied by a new plugin project setup script, and a plugin resource var packaging script (replacing the VaM package creator).
+There's also a new plugin project setup script, and a plugin resource var packaging script (replacing the VaM package creator).
 
 ## Requirements
 
@@ -26,18 +27,18 @@ Create a dir with your creator name under the `Scripts` dir. You should have:
 
     VaM/Custom/Scripts/CreatorName
 
-Copy the `NewPlugin` dir as well as the scripts `setup.sh` and `package.sh` from this repository under your creator name's dir.
+Copy and paste the `NewPlugin` dir as well as the scripts `setup.sh` and `package.sh` from this repository under your creator name's dir.
 
 Rename the `NewPlugin` dir to how you want your plugin to be named. Let's call it `MyPlugin` from now on.
 
-Run the setup script from Ubuntu/WSL terminal. It substitutes your creator name and plugin name in the project files.
+Run the setup script from Ubuntu/WSL terminal. It substitutes your creator name and plugin name in the project files. It also puts your creator name (the name of the plugin's parent directory) into the LICENSE file - feel free to replace that if for some reason you don't want to release the source code under the MIT license.
 
     cd <path to VaM>/Custom/Scripts/CreatorName
     ./setup.sh MyPlugin
 
 The `<path to VaM>` is most likely something like `/mnt/<drive letter>/VaM`.
 
-Finally, open the .csproj file in **Visual Studio** - and you're good to go.
+Finally, open the .csproj file in **Visual Studio** - and you're good to go. When you have created something worth developing further and perhaps releasing, initialize a git repo in the plugin dir (and host it in GitHub).
 
 ## Multiple plugins setup
 
