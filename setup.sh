@@ -22,8 +22,6 @@ mv NewPlugin.cslist $plugin_name.cslist
 sed -i "s/NewPlugin/$plugin_name/g" src/Script.cs
 sed -i "s/NewPlugin/$plugin_name/g" src/Utils/Log.cs
 sed -i "s/NewPlugin/$plugin_name/g" README.md
-echo "meta.json" >> .gitignore
-echo "$plugin_name.csproj" >> .gitignore
 cd ..
 
 echo "Setup done for new plugin $plugin_name by $creator_name."
