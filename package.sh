@@ -6,7 +6,7 @@ plugin_version=$3
 
 usage()
 {
-  echo "Usage: ./package.sh <PluginDir> <PluginVersion> <VarPackageVersion>"
+  echo "Usage: ./package.sh <PluginDir> <VarPackageVersion> <PluginVersion>"
   echo "e.g.   ./package.sh MyPlugin 1 1.0.0"
   exit 1
 }
@@ -20,8 +20,11 @@ ls $plugin_name 1> /dev/null || usage
 resource_dir=publish/Custom/Scripts/$creator_name/$resource_name
 mkdir -p $resource_dir
 cp $plugin_name/*.cslist $resource_dir/
-cp $plugin_name/README.md $resource_dir/
 cp -r $plugin_name/src $resource_dir/
+cp $plugin_name/LICENSE $resource_dir/src/
+
+# Additional packaging
+# add plugin specific additional package contents here, toggle line comments as needed
 
 # Update version info in meta.json
 cp $plugin_name/meta.json publish/
