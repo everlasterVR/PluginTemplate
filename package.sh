@@ -17,11 +17,11 @@ ls $plugin_name 1> /dev/null || usage
 [ -z "$plugin_version" ] && usage
 
 # Setup archive contents
-resource_dir=publish/Custom/Scripts/$creator_name/$resource_name
+resource_dir=publish/Custom/Scripts/$creator_name/$plugin_name
 mkdir -p $resource_dir
 cp $plugin_name/*.cslist $resource_dir/
 cp -r $plugin_name/src $resource_dir/
-cp $plugin_name/LICENSE $resource_dir/src/
+cp $plugin_name/LICENSE $resource_dir/
 
 # Additional packaging
 # add plugin specific additional package contents here, toggle line comments as needed
