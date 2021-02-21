@@ -6,9 +6,9 @@ plugin_version=$3
 
 usage()
 {
-  echo "Usage: ./package.sh <PluginDir> <VarPackageVersion> <PluginVersion>"
-  echo "e.g.   ./package.sh MyPlugin 1 1.0.0"
-  exit 1
+    echo "Usage: ./package.sh <PluginDir> <VarPackageVersion> <PluginVersion>"
+    echo "e.g.   ./package.sh MyPlugin 1 1.0.0"
+    exit 1
 }
 
 [ -z "$plugin_name" ] && usage
@@ -23,17 +23,20 @@ cp $plugin_name/*.cslist $resource_dir/
 cp -r $plugin_name/src $resource_dir/
 cp $plugin_name/LICENSE $resource_dir/
 
-# Additional packaging
-# add plugin specific additional package contents here, toggle line comments as needed
+# Additional plugin specific packaging
+# if [ "$plugin_name" == "FooBar" ]; then
+#     mkdir -p publish/Custom/Assets/$creator_name
+#     cp -r ../../Custom/Assets/$creator_name/$plugin_name publish/Custom/Assets/$creator_name
+# fi
 
-# Update version info in meta.json
+# Update version info
 cp $plugin_name/meta.json publish/
 sed -i "s/<Version>/$plugin_version/g" publish/meta.json
-sed -i "s/<Version>/$plugin_version/g" publish/src/Script.cs
+sed -i "s/<Version>/$plugin_version/g" $resource_dir/src/Script.cs
 
 # hide .cs files (plugin is loaded with .cslist)
 for file in $(find $resource_dir -type f -name "*.cs"); do
-  touch $file.hide
+    touch $file.hide
 done
 
 # Zip files to .var and cleanup
