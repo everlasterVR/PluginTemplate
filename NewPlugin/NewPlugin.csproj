@@ -79,11 +79,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\Script.cs" />
-    <Compile Include="src\Utils\Log.cs" />
+    <Compile Include="src\Utils\Logger.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitignore" />
     <None Include="NewPlugin.cslist" />
     <None Include="meta.json" />
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

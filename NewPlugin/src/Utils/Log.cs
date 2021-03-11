@@ -1,13 +1,20 @@
 ﻿namespace NewPlugin
 {
-    public static class Log
+    public class Log
     {
-        public static void Error(string message, string name = nameof(Script))
+        private string name;
+
+        public Log(string name)
+        {
+            this.name = name;
+        }
+
+        public void Error(string message)
         {
             SuperController.LogError($"{nameof(NewPlugin)}.{name}: {message}");
         }
 
-        public static void Message(string message, string name = nameof(Script))
+        public void Message(string message)
         {
             SuperController.LogMessage($"{nameof(NewPlugin)}.{name}: {message}");
         }

@@ -4,27 +4,18 @@ namespace NewPlugin
 {
     internal class Script : MVRScript
     {
+        private Log log = new Log(nameof(Script));
         private const string version = "<Version>";
 
         public override void Init()
         {
             try
             {
-                TitleUITextField();
             }
             catch(Exception e)
             {
-                Log.Error($"{e}");
+                log.Error($"{e}");
             }
-        }
-
-        private void TitleUITextField()
-        {
-            JSONStorableString storable = new JSONStorableString("title", "");
-            UIDynamicTextField field = CreateTextField(storable);
-            field.UItext.fontSize = 36;
-            field.height = 100;
-            storable.val = $"<b>{nameof(NewPlugin)}</b>\n<size=28>v{version}</size>";
         }
 
         public void OnEnable()
@@ -34,7 +25,7 @@ namespace NewPlugin
             }
             catch(Exception e)
             {
-                Log.Error($"{e}");
+                log.Error($"{e}");
             }
         }
 
@@ -45,7 +36,7 @@ namespace NewPlugin
         //    }
         //    catch(Exception e)
         //    {
-        //        Log.Error($"{e}");
+        //        log.Error($"{e}");
         //    }
         //}
 
@@ -56,7 +47,7 @@ namespace NewPlugin
         //    }
         //    catch(Exception e)
         //    {
-        //        Log.Error($"{e}");
+        //        log.Error($"{e}");
         //    }
         //}
 
@@ -67,7 +58,7 @@ namespace NewPlugin
             }
             catch(Exception e)
             {
-                Log.Error($"{e}");
+                log.Error($"{e}");
             }
         }
 
@@ -78,7 +69,7 @@ namespace NewPlugin
             }
             catch(Exception e)
             {
-                Log.Error($"{e}");
+                log.Error($"{e}");
             }
         }
     }
