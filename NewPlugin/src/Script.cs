@@ -4,7 +4,6 @@ namespace NewPlugin
 {
     internal class Script : MVRScript
     {
-        private Log log = new Log(nameof(Script));
         private const string version = "<Version>";
 
         public override void Init()
@@ -14,7 +13,7 @@ namespace NewPlugin
             }
             catch(Exception e)
             {
-                log.Error($"{e}");
+                Log.Error($"{e}");
             }
         }
 
@@ -25,7 +24,7 @@ namespace NewPlugin
             }
             catch(Exception e)
             {
-                log.Error($"{e}");
+                Log.Error($"{e}");
             }
         }
 
@@ -36,7 +35,7 @@ namespace NewPlugin
         //    }
         //    catch(Exception e)
         //    {
-        //        log.Error($"{e}");
+        //        Log.Error($"{e}");
         //    }
         //}
 
@@ -47,7 +46,7 @@ namespace NewPlugin
         //    }
         //    catch(Exception e)
         //    {
-        //        log.Error($"{e}");
+        //        Log.Error($"{e}");
         //    }
         //}
 
@@ -58,7 +57,7 @@ namespace NewPlugin
             }
             catch(Exception e)
             {
-                log.Error($"{e}");
+                Log.Error($"{e}");
             }
         }
 
@@ -69,7 +68,7 @@ namespace NewPlugin
             }
             catch(Exception e)
             {
-                log.Error($"{e}");
+                Log.Error($"{e}");
             }
         }
     }
